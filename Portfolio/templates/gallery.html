@@ -1,0 +1,48 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Grid row -->
+<section class="gallery-block grid-gallery">
+    <div class="container">
+        <div class="heading">
+            <h2>Grid Gallery</h2>
+        </div>
+
+        <div class="container mt-3 mb-3">
+            <div class="row">
+        
+                <!-- Grid column -->
+                <div class="col-md-12 d-flex justify-content-center mb-5">
+                    <button type="button" class="btn btn-outline-dark mx-2"> <a href="{% url 'gallery' %}">All </a></button>
+                    
+                    {% for single_category in categories  %}
+                        <button type="button" class="btn btn-outline-dark mx-2" ><a href="{{single_category.get_url}}"> {{single_category.category_name}} </a></button>
+                        
+                    {% endfor %}
+                        
+                </div>
+                <!-- Grid column -->
+            </div> 
+            
+        <div class="row">
+
+            <div class="col-lg-4 item">
+                {% for image in images %}
+                    <a class="lightbox" href="{{image.image_size.url}}">
+                            <img class="img-fluid image scale-on-hover" src="{{image.image_size.url}}">
+                        </a>
+                {% endfor %}
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

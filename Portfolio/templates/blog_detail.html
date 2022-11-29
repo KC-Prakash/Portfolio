@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container w-75 my-4">
+    {% for post in detail_post %}
+    
+    
+    <div class="card mb-3 mt-3">
+        <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text"><small class="text-muted"> By {{post.author}} on {{post.post_time}}</small></p>
+          <p class="card-text">{{post.description}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+{% endblock content %}

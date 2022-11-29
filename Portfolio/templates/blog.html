@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 style="text-align:center"> This is Blog Page</h1>
+<div class="container mt-8 mb-3" style="border:2px solid black">
+<style>
+      .card-text {
+            padding: 10px;
+            width: 100%;
+            margin: 3px auto;
+            text-align: justify;
+            }
+</style>
+  
+    <div class="row">
+        {% for post in allpost %}
+        
+        
+        <div class="col-lg-4 my-3 mx-0">
+            <div class="card shadow" >
+                  <img src="{{post.image.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                          <h5 class="card-title">{{post.title}}<br><small>By {{post.author}}.{{post.post_time}}</small></h5>
+                          <p class="card-text" text-align:justify>{{post.description|truncatechars:200}}</p>
+                          <a href="{% url 'blog_detail' post.slug %}" class="btn btn-primary">Read More</a>
+                        </div>
+              </div>
+        </div>
+        {% endfor %}
+  </div>
+
+</div>
+    
+{% endblock content %}

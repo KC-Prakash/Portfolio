@@ -1,0 +1,24 @@
+{% load static %}
+    <footer>
+      <div class="footer-container">
+        <div class="left-col">
+           <div class="social-media">
+            {% for profile in about.profile_set.all%}
+					<a href="{{profile.link}}"><i class="fab fa-{{profile.social_name}}"></i></a>
+					{% endfor %}
+            
+          </div>
+          <p class="rights-text">© 2022 Created By <b>Prakash KC</b>  All Rights Reserved.</p>
+        </div>
+
+        <div class="right-col">
+          <h1>Our Newsletter</h1>
+          <div class="border"></div>
+          <p>Enter Your Email to get our news and updates.</p>
+          <form action="" class="newsletter-form">
+            <input type="text" class="txtb" placeholder="Enter Your Email">
+            <input type="submit" class="btn" value="submit">
+          </form>
+        </div>
+      </div>
+    </footer>

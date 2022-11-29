@@ -1,0 +1,36 @@
+0. pip install virtualenv
+1. virtualenv env
+2. env\Scripts\activate
+3. pip freeze > requirements.txt
+4. pip install django
+5. django-admin startproject Portfolio
+6. cd portfolio
+7. python manage.py startapp blogsite
+8. blogsite folder मा new file: urls.py मा setting बनाउने
+9. portfolio को urls.py मा setting थप गर्ने
+10. portfolio को setting को installed app को list मा "blogsit" थपन्‍ने ।  
+11. portfolio मा templates folder बनाउने र templates folder भत्र includes folder बनाउने 
+12. portfolio को setting को templates को DIRS मा templates र time_zone मा asia/kathandu थपन्‍ने 
+13. portfolio मा static folder बनाउने
+14. templates folder मा insex.html file बनाउने
+15. include folder भित्र navbar.html, footer.html file बनाउने
+16. python manage.py makemigrations
+17. python manage.py migrate
+18. python manage.py runserver
+19. python manage.py createsuperuser
+20. pip install pillow (install for image field)
+
+
+
+
+
+version checck
+1. python --version
+2. pip --version
+3. virtualenv --version
+4. python -m django --version
+
+upgrade
+1. django: python.exe -m pip install --upgrade pip
+2. pip: python -m pip instal --upgrade.pip
+ 
